@@ -10,26 +10,11 @@ const getPlayerSelection = userInput => {
 };
 
 // function to get computer's choice //
+const choice = ['rock', 'paper', 'scissors'];
+
 function getComputerChoice() {
-    let compSelection = Math.floor(Math.random() * 3);
+    let compSelection = choice[Math.floor(Math.random() * 3)];
     console.log('Computer Selection: ' + compSelection);
-    let rps;
-    // switch integer value to either rock, paper or scissors //
-    switch (compSelection) {
-      case 0:
-        rps = 'Rock';
-        break;
-      case 1:
-        rps = 'Paper';
-        break;
-      case 2:
-        rps = 'Scissors';
-        break;
-      default:
-        console.log('Invalid');
-        break;
-    } 
-    return rps;
 };
 
 // function to decide winner //
