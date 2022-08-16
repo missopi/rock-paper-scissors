@@ -1,6 +1,6 @@
 // function to get player's selection //
 function getPlayerSelection() {
-    let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?').toLocaleLowerCase();
+    let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?').toLowerCase();
     if (playerSelection === 'rock' || playerSelection === 'scissors' || playerSelection === 'paper') {
     return playerSelection;
     } else {
