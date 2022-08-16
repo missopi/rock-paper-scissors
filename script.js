@@ -5,7 +5,7 @@ playerSelection = prompt("What do you choose? Rock, paper, or scissors?", '');
 function getPlayerSelection() {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection === 'rock' || playerSelection === 'scissors' || playerSelection === 'paper') {
-      console.log('You chose ' + '${playerSelection}');
+      console.log("You chose " + playerSelection);
     } else {
       console.log('Invalid choice');
     } 
@@ -19,7 +19,6 @@ function getComputerChoice() {
 };
 
 // function to decide winner //
-const winner = getWinner(playerSelection, compSelection);
  
 function getWinner(playerSelection, compSelection) {
     if (playerSelection === 'rock' && compSelection === 'paper') {
