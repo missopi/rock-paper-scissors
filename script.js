@@ -1,5 +1,4 @@
-// get player selection//
-
+// function to get player's selection//
 const getPlayerSelction = userInput => {
     userInput = userInput.toLowerCase();
     // to make sure input is valid
@@ -7,8 +6,8 @@ const getPlayerSelction = userInput => {
       return userInput;
     } else {
       console.log('Invalid');
-    } //end else
-  };
+    } 
+};
 
 // function to get computer's choice //
 function getComputerChoice() {
@@ -29,6 +28,34 @@ function getComputerChoice() {
       default:
         console.log('Invalid');
         break;
-    } //end switch 
+    } 
     return rps;
-  }
+};
+
+// function to decide winner //
+const getWinner = (playerSelection, compSelection) => {
+    if (playerSelection === compSelection) {
+        return 'This game is a draw';
+    }
+    if (playerSelection === 'Rock') {
+        if (compSelection === 'Paper') {
+          return 'You Lost! Paper beats Rock';
+        } else {
+          return "You Won!"
+        }
+    }
+    if (playerSelection === 'Paper') {
+        if (compSelection === 'Scissors') {
+          return 'You Lost! Scissors beat Paper';
+        } else {
+          return 'You won!';
+        }
+    } 
+    if (playerSelection === 'Scissors') {
+        if (compSelection === 'Rock') {
+          return 'You Lost! Rock beats Scissors';
+        } else {
+          return 'You won!';
+        }
+    } 
+};
