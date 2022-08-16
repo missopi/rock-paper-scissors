@@ -1,5 +1,5 @@
 // function to get player's selection//
-const getPlayerSelction = userInput => {
+const getPlayerSelection = userInput => {
     userInput = userInput.toLowerCase();
     // to make sure input is valid
     if (userInput === 'rock' || 'scissors' || 'paper') {
