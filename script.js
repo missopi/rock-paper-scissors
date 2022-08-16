@@ -1,7 +1,7 @@
-// function to get player's selection//
+// function to get player's selection //
 const getPlayerSelection = userInput => {
     userInput = userInput.toLowerCase();
-    // to make sure input is valid
+    // to make sure input is valid //
     if (userInput === 'rock' || 'scissors' || 'paper') {
       return userInput;
     } else {
@@ -33,40 +33,32 @@ function getComputerChoice() {
 };
 
 // function to decide winner //
-const getWinner = (playerSelection, compSelection) => {
-    if (playerSelection === compSelection) {
-        return 'This game is a draw';
+const winner = getWinner(playerSelection, compSelection);
+ 
+function getWinner(playerSelection, compSelection) {
+    if (playerSelection === 'rock' && compSelection === 'paper') {
+        console.log('You Lost. Paper covers Rock.');  
+    } else if (playerSelection === 'paper' && compSelection === 'scissors') {
+        console.log('You Lost. Scissors cut Paper.');
+    } else if (playerSelection === 'scissors' && compSelection === 'rock') {
+        console.log('You Lost. Rock breaks Scissors.');
+    } else if (playerSelection === 'paper' && compSelection === 'rock') {
+        console.log('You Won! Paper covers Rock.');
+    } else if (playerSelection === 'scissors' && compSelection === 'paper') {
+        console.log('You Won! Scissors cut Paper.');
+    } else if (playerSelection === 'rock' && compSelection === 'scissors') {
+        console.log('You Won! Rock breaks Scissors.');
+    } else {
+        console.log('It is a draw');
     }
-    if (playerSelection === 'Rock') {
-        if (compSelection === 'Paper') {
-          return 'You Lost! Paper beats Rock';
-        } else {
-          return "You Won!"
-        }
-    }
-    if (playerSelection === 'Paper') {
-        if (compSelection === 'Scissors') {
-          return 'You Lost! Scissors beat Paper';
-        } else {
-          return 'You won!';
-        }
-    } 
-    if (playerSelection === 'Scissors') {
-        if (compSelection === 'Rock') {
-          return 'You Lost! Rock beats Scissors';
-        } else {
-          return 'You won!';
-        }
-    } 
 };
 
 // function to play the game //
 function playTheGame(rps) {
     const playerSelection = getPlayerSelection(rps);
     const compSelection = getComputerChoice();
-  console.log('You chose ' + playerSelection);
-  console.log('The computer chose: ' + compSelection);
-
-  console.log(getWinner(playerSelection, compSelection));
+    console.log('You chose ' + playerSelection);
+    console.log('The computer chose: ' + compSelection);
+    console.log(winner(playerSelection, compSelection));
 } 
 
