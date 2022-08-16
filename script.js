@@ -13,7 +13,7 @@ const getPlayerSelction = userInput => {
 function getComputerChoice() {
     let compSelection = Math.floor(Math.random() * 3);
     console.log('Computer Selection: ' + compSelection);
-    var rps;
+    let rps;
     // switch integer value to either rock, paper or scissors //
     switch (compSelection) {
       case 0:
