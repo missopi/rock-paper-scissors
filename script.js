@@ -1,19 +1,19 @@
 // function to get player's selection //
-
-let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?').toLocaleLowerCase();
-if (playerSelection === 'rock' || playerSelection === 'scissors' || playerSelection === 'paper') {
-console.log("You chose " + playerSelection);
-} else {
-console.log('Invalid choice');
-};
+function getPlayerSelection() {
+    //let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?').toLocaleLowerCase();
+    if (playerSelection === 'rock' || playerSelection === 'scissors' || playerSelection === 'paper') {
+    return "You chose " + playerSelection;
+    } else {
+    return "Invalid choice";
+    }
+}
 
 // function to get computer's choice //
-
-let choice = ['rock', 'paper', 'scissors'];
-let computerSelection = choice[Math.floor(Math.random() * 3)];
-
-console.log("Computer chooses " + computerSelection);
-
+function getComputerChoice() {  
+    let choice = ['rock', 'paper', 'scissors'];
+    let computerSelection = choice[Math.floor(Math.random() * 3)];
+    return "Computer chooses " + computerSelection;
+}
 
 // function to play round //
 
@@ -34,3 +34,7 @@ function playRound(playerSelection, computerSelection){
         return 'It is a draw';
     }; 
 }
+
+const playerSelection = 'rock';
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
