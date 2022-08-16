@@ -2,13 +2,11 @@
 
 let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?');
 
-//function getPlayerSelection() {
 if (playerSelection === 'rock' || playerSelection === 'scissors' || playerSelection === 'paper') {
 console.log("You chose " + playerSelection);
 } else {
 console.log('Invalid choice');
 };
-//};
 
 // function to get computer's choice //
 
@@ -20,23 +18,21 @@ console.log("Computer chooses " + compSelection);
 
 // function to decide winner //
  
-//function getWinner(playerSelection, compSelection) {
- //   if (playerSelection === 'rock' && compSelection === 'paper') {
- //       console.log('You Lost. Paper covers Rock.');  
- //   } else if (playerSelection === 'paper' && compSelection === 'scissors') {
- //       console.log('You Lost. Scissors cut Paper.');
- //   } else if (playerSelection === 'scissors' && compSelection === 'rock') {
-  //      console.log('You Lost. Rock breaks Scissors.');
- //   } else if (playerSelection === 'paper' && compSelection === 'rock') {
- //       console.log('You Won! Paper covers Rock.');
-  //  } else if (playerSelection === 'scissors' && compSelection === 'paper') {
-    //    console.log('You Won! Scissors cut Paper.');
-   // } else if (playerSelection === 'rock' && compSelection === 'scissors') {
-   //     console.log('You Won! Rock breaks Scissors.');
-   // } else {
-   //     console.log('It is a draw');
-   // }
-//};
+if (playerSelection === 'rock' && compSelection === 'paper') {
+    console.log('You Lost. Paper covers Rock.');  
+} else if (playerSelection === 'paper' && compSelection === 'scissors') {
+    console.log('You Lost. Scissors cut Paper.');
+} else if (playerSelection === 'scissors' && compSelection === 'rock') {
+    console.log('You Lost. Rock breaks Scissors.');
+} else if (playerSelection === 'paper' && compSelection === 'rock') {
+    console.log('You Won! Paper covers Rock.');
+} else if (playerSelection === 'scissors' && compSelection === 'paper') {
+    console.log('You Won! Scissors cut Paper.');
+} else if (playerSelection === 'rock' && compSelection === 'scissors') {
+    console.log('You Won! Rock breaks Scissors.');
+} else {
+    console.log('It is a draw');
+};
 
 // function to play the game //
 //function playTheGame() {
