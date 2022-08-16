@@ -59,3 +59,14 @@ const getWinner = (playerSelection, compSelection) => {
         }
     } 
 };
+
+// function to play the game //
+function playTheGame(rps) {
+    const playerSelection = getPlayerSelection(rps);
+    const compSelection = getComputerChoice();
+  console.log('You chose ' + playerSelection);
+  console.log('The computer chose: ' + compSelection);
+
+  console.log(getWinner(playerSelection, compSelection));
+} 
+
