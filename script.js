@@ -1,11 +1,12 @@
 // function to get player's selection //
-const getPlayerSelection = userInput => {
-    userInput = userInput.toLowerCase();
-    // to make sure input is valid //
-    if (userInput === 'rock' || 'scissors' || 'paper') {
-      return userInput;
+
+const playerSelection = prompt("Do you choose rock, paper, or scissors?").toLocaleLowerCase();
+
+function getPlayerSelection() {
+    if (playerSelection === 'rock' || playerSelection === 'scissors' || playerSelection === 'paper') {
+      console.log('You chose ' + '${playerSelection}');
     } else {
-      console.log('Invalid');
+      console.log('Invalid choice');
     } 
 };
 
@@ -18,7 +19,7 @@ function getComputerChoice() {
 };
 
 // function to decide winner //
-const winner = getWinner(playerSelection, compSelection);
+const winner = getWinner[playerSelection, compSelection];
  
 function getWinner(playerSelection, compSelection) {
     if (playerSelection === 'rock' && compSelection === 'paper') {
@@ -39,11 +40,11 @@ function getWinner(playerSelection, compSelection) {
 };
 
 // function to play the game //
-function playTheGame(rps) {
-    const playerSelection = getPlayerSelection(rps);
+function playTheGame() {
+    const playerSelection = getPlayerSelection();
     const compSelection = getComputerChoice();
     console.log('You chose ' + playerSelection);
     console.log('The computer chose: ' + compSelection);
-    console.log(winner(playerSelection, compSelection));
+    console.log(getWinner(playerSelection, compSelection));
 } 
 
