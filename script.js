@@ -1,7 +1,7 @@
 // function to get player's selection //
 function getPlayerSelection() {
     let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?').toLowerCase();
-    if (playerSelection === 'rock' || playerSelection === 'scissors' || playerSelection === 'paper') {
+    if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
     return playerSelection;
     } else {
     return "Invalid choice";
@@ -19,17 +19,17 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection){
     if (playerSelection === 'rock' && computerSelection === 'paper') {
-    console.log('You Lost. Paper covers Rock.');  
+        return 'You Lost. Paper covers rock.';  
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        return 'You Lost. Scissors cut Paper.';
+        return 'You Lost. Scissors cut paper.';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        return 'You Lost. Rock breaks Scissors.';
+        return 'You Lost. Rock breaks scissors.';
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        return 'You Won! Paper covers Rock.';
+        return 'You Won! Paper covers rock.';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        return 'You Won! Scissors cut Paper.';
+        return 'You Won! Scissors cut paper.';
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        return 'You Won! Rock breaks Scissors.';
+        return 'You Won! Rock breaks scissors.';
     } else if (playerSelection === computerSelection) {
         return 'It is a draw';
     } else {
