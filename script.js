@@ -1,3 +1,14 @@
+// get player selection//
+
+const getPlayerSelction = userInput => {
+    userInput = userInput.toLowerCase();
+    // to make sure input is valid
+    if (userInput === 'rock' || 'scissors' || 'paper') {
+      return userInput;
+    } else {
+      console.log('Invalid');
+    } //end else
+  };
 
 // function to get computer's choice //
 function getComputerChoice() {
