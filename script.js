@@ -10,24 +10,24 @@ console.log('Invalid choice');
 // function to get computer's choice //
 
 let choice = ['rock', 'paper', 'scissors'];
-let compSelection = choice[Math.floor(Math.random() * 3)];
+let computerSelection = choice[Math.floor(Math.random() * 3)];
 
-console.log("Computer chooses " + compSelection);
+console.log("Computer chooses " + computerSelection);
 
 
 // function to decide winner //
  
-if (playerSelection === 'rock' && compSelection === 'paper') {
+if (playerSelection === 'rock' && computerSelection === 'paper') {
     console.log('You Lost. Paper covers Rock.');  
-} else if (playerSelection === 'paper' && compSelection === 'scissors') {
+} else if (playerSelection === 'paper' && computerSelection === 'scissors') {
     console.log('You Lost. Scissors cut Paper.');
-} else if (playerSelection === 'scissors' && compSelection === 'rock') {
+} else if (playerSelection === 'scissors' && computerSelection === 'rock') {
     console.log('You Lost. Rock breaks Scissors.');
-} else if (playerSelection === 'paper' && compSelection === 'rock') {
+} else if (playerSelection === 'paper' && computerSelection === 'rock') {
     console.log('You Won! Paper covers Rock.');
-} else if (playerSelection === 'scissors' && compSelection === 'paper') {
+} else if (playerSelection === 'scissors' && computerSelection === 'paper') {
     console.log('You Won! Scissors cut Paper.');
-} else if (playerSelection === 'rock' && compSelection === 'scissors') {
+} else if (playerSelection === 'rock' && computerSelection === 'scissors') {
     console.log('You Won! Rock breaks Scissors.');
 } else {
     console.log('It is a draw');
