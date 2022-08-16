@@ -1,7 +1,6 @@
 // function to get player's selection //
 
 let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?');
-
 if (playerSelection === 'rock' || playerSelection === 'scissors' || playerSelection === 'paper') {
 console.log("You chose " + playerSelection);
 } else {
@@ -32,14 +31,5 @@ if (playerSelection === 'rock' && compSelection === 'paper') {
     console.log('You Won! Rock breaks Scissors.');
 } else {
     console.log('It is a draw');
-};
-
-// function to play the game //
-//function playTheGame() {
-   // const playerSelection = getPlayerSelection();
-    //const compSelection = getComputerChoice();
-   // console.log('You chose ' + playerSelection);
-  //  console.log('The computer chose: ' + compSelection);
-  //  console.log(getWinner(playerSelection, compSelection));
-//} 
+}; 
 
