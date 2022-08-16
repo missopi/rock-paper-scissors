@@ -3,9 +3,7 @@ function getPlayerSelection() {
     let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?').toLowerCase();
     if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
     return playerSelection;
-    } else {
-    return "Invalid choice";
-    }
+    };
 }
 
 // function to get computer's choice //
@@ -31,10 +29,10 @@ function playRound(playerSelection, computerSelection){
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         return 'You Won! Rock breaks scissors.';
     } else if (playerSelection === computerSelection) {
-        return 'It is a draw';
+        return 'It is a draw.';
     } else {
-        return 'no match';
-    }; 
+        return 'Invalid Choice';
+    };
 }
 
 const playerSelection = getPlayerSelection();
