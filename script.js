@@ -1,8 +1,9 @@
 // function to get player's selection //
 
-const playerSelection = prompt("Do you choose rock, paper, or scissors?").toLocaleLowerCase();
+playerSelection = prompt("What do you choose? Rock, paper, or scissors?", '');
 
 function getPlayerSelection() {
+    playerSelection = playerSelection.toLowerCase();
     if (playerSelection === 'rock' || playerSelection === 'scissors' || playerSelection === 'paper') {
       console.log('You chose ' + '${playerSelection}');
     } else {
@@ -15,11 +16,10 @@ const choice = ['rock', 'paper', 'scissors'];
 
 function getComputerChoice() {
     let compSelection = choice[Math.floor(Math.random() * 3)];
-    console.log('Computer Selection: ' + compSelection);
 };
 
 // function to decide winner //
-const winner = getWinner[playerSelection, compSelection];
+const winner = getWinner(playerSelection, compSelection);
  
 function getWinner(playerSelection, compSelection) {
     if (playerSelection === 'rock' && compSelection === 'paper') {
