@@ -57,11 +57,11 @@ function game(playerScore, computerScore) {
         let result = playRound(playerSelection, computerSelection);
         console.log(result);
 
-        let playerScore = playRound(playerScore);
-        let computerScore = playRound(computerScore);
+        //let playerScore = playRound(playerScore);
+        //let computerScore = playRound(computerScore);
         console.log(playerScore);
         console.log(computerScore);
-        
+
         if (playerScore >= 1) {
             playerScore += 1;
         } 
