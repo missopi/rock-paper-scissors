@@ -42,21 +42,37 @@ let computerScore = parseInt(0);
 
 function game(playerScore, computerScore) {
     for (let i = 0; i < 5; i++) {
-        console.log(playRound(playerSelection, computerSelection));
-        console.log("Your score is " + playerScore);
-        console.log("The computer's score is " + computerScore);
-        if (playerScore < computerScore){
-            return "You lose";
-        }
-        else if (playerScore > computerScore) {
-            return "You win!";
+        let playerSelection = getPlayerSelection();
+        console.log(playerSelection);
+        let computerSelection = getComputerChoice();
+        console.log(computerSelection);
+        let result = playRound(playerSelection, computerSelection);
+        console.log(result);
+        if (playerScore === 1) {
+            playerScore += 1;
+            computerScore += 0;
+        } 
+        else if (computerScore === 1) {
+            computerScore += 1;
+            playerScore += 0;
         }
         else {
-            return "It is a draw.";
+            computerScore && playerScore === 0;
         }
+        console.log("Player's score = " + playerScore);
+        console.log("Computer's score = " + computerScore);
+    
+    }
+    if (playerScore < computerScore){
+        return "You lose";
+    }
+    else if (playerScore > computerScore) {
+        return "You win!";
+    }
+    else {
+        return "It is a draw.";
     }
 }
 
-const playerSelection = getPlayerSelection();
-const computerSelection = getComputerChoice();
+
 console.log(game(playerScore, computerScore));
