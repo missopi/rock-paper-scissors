@@ -35,6 +35,28 @@ function playRound(playerSelection, computerSelection){
     };
 }
 
+// function to play a 5 round game //
+
+let playerScore = parseInt(0);
+let computerScore = parseInt(0);
+
+function game(playerScore, computerScore) {
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound(playerSelection, computerSelection));
+        console.log("Your score is " + playerScore);
+        console.log("The computer's score is " + computerScore);
+        if (playerScore < computerScore){
+            return "You lose";
+        }
+        else if (playerScore > computerScore) {
+            return "You win!";
+        }
+        else {
+            return "It is a draw.";
+        }
+    }
+}
+
 const playerSelection = getPlayerSelection();
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(game(playerScore, computerScore));
