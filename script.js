@@ -21,22 +21,22 @@ let computerScore = 0;
 function playRound(playerSelection, computerSelection, playerScore, computerScore){
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
-        return 'You Lost. Paper covers rock.';  
+        return 'You Lost. Paper covers rock. The computer scores one point';  
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         computerScore += 1;
-        return 'You Lost. Scissors cut paper.';
+        return 'You Lost. Scissors cut paper. The computer scores one point';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore += 1;
-        return 'You Lost. Rock breaks scissors.';
+        return 'You Lost. Rock breaks scissors. The computer scores one point';
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore += 1;
-        return 'You Won! Paper covers rock.';
+        return 'You Won! Paper covers rock. You score one point';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore += 1;
-        return 'You Won! Scissors cut paper.';
+        return 'You Won! Scissors cut paper. You score one point';
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore += 1;
-        return 'You Won! Rock breaks scissors.';
+        return 'You Won! Rock breaks scissors. You score one point';
     } else if (playerSelection === computerSelection) {
         return 'It is a draw.';
     } else {
@@ -54,13 +54,11 @@ function game(playerScore, computerScore) {
         console.log(computerSelection);
         let result = playRound(playerSelection, computerSelection, playerScore, computerScore);
         console.log(result);
-        if (playerScore == 1) {
+        if (playerScore >= 1) {
             playerScore += 1;
-            computerScore += 0;
         } 
-        else if (computerScore == 1) {
+        else if (computerScore >= 1) {
             computerScore += 1;
-            playerScore += 0;
         }
         else {
             computerScore += 0;
