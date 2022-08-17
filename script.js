@@ -15,18 +15,28 @@ function getComputerChoice() {
 
 // function to play round //
 
+let playerScore = 0;
+let computerScore = 0;
+
+
 function playRound(playerSelection, computerSelection){
     if (playerSelection === 'rock' && computerSelection === 'paper') {
+        computerScore + 1;
         return 'You Lost. Paper covers rock.';  
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        computerScore + 1;
         return 'You Lost. Scissors cut paper.';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        computerScore + 1;
         return 'You Lost. Rock breaks scissors.';
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        playerScore + 1;
         return 'You Won! Paper covers rock.';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        playerScore + 1;
         return 'You Won! Scissors cut paper.';
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        playerScore + 1;
         return 'You Won! Rock breaks scissors.';
     } else if (playerSelection === computerSelection) {
         return 'It is a draw.';
@@ -37,9 +47,6 @@ function playRound(playerSelection, computerSelection){
 
 // function to play a 5 round game //
 
-let playerScore = parseInt(0);
-let computerScore = parseInt(0);
-
 function game(playerScore, computerScore) {
     for (let i = 0; i < 5; i++) {
         let playerSelection = getPlayerSelection();
@@ -48,19 +55,19 @@ function game(playerScore, computerScore) {
         console.log(computerSelection);
         let result = playRound(playerSelection, computerSelection);
         console.log(result);
-        if (playerScore === 1) {
+        if (playerScore = 1) {
             playerScore += 1;
             computerScore += 0;
         } 
-        else if (computerScore === 1) {
+        else if (computerScore = 1) {
             computerScore += 1;
             playerScore += 0;
         }
         else {
             computerScore && playerScore === 0;
         }
-        console.log("Player's score = " + playerScore);
-        console.log("Computer's score = " + computerScore);
+        console.log(playerScore);
+        console.log(computerScore);
     
     }
     if (playerScore < computerScore){
