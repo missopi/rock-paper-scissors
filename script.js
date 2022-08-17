@@ -14,11 +14,13 @@ function getComputerChoice() {
 }
 
 // function to play round //
-
 let playerScore = 0;
 let computerScore = 0;
 
-function playRound(playerSelection, computerSelection, playerScore, computerScore){
+
+
+function playRound(playerSelection, computerSelection){
+  
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
         return 'You Lost. Paper covers rock. The computer scores one point';  
@@ -38,7 +40,7 @@ function playRound(playerSelection, computerSelection, playerScore, computerScor
         playerScore += 1;
         return 'You Won! Rock breaks scissors. You score one point';
     } else if (playerSelection === computerSelection) {
-        return 'It is a draw.';
+        return 'It is a draw. No-one scores';
     } else {
         return 'Invalid Choice';
     };
@@ -52,8 +54,14 @@ function game(playerScore, computerScore) {
         console.log(playerSelection);
         let computerSelection = getComputerChoice();
         console.log(computerSelection);
-        let result = playRound(playerSelection, computerSelection, playerScore, computerScore);
+        let result = playRound(playerSelection, computerSelection);
         console.log(result);
+
+        let playerScore = playRound(playerScore);
+        let computerScore = playRound(computerScore);
+        console.log(playerScore);
+        console.log(computerScore);
+        
         if (playerScore >= 1) {
             playerScore += 1;
         } 
@@ -66,7 +74,6 @@ function game(playerScore, computerScore) {
         }
         console.log(playerScore);
         console.log(computerScore);
-    
     }
     if (playerScore < computerScore){
         return "You lose";
