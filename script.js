@@ -18,34 +18,26 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection, playerScore, computerScore){
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
-        playerScore += 0;
         return 'You Lost. Paper covers rock.';  
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         computerScore += 1;
-        playerScore += 0;
         return 'You Lost. Scissors cut paper.';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore += 1;
-        playerScore += 0;
         return 'You Lost. Rock breaks scissors.';
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore += 1;
-        computerScore += 0;
         return 'You Won! Paper covers rock.';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore += 1;
-        computerScore += 0;
         return 'You Won! Scissors cut paper.';
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore += 1;
-        computerScore += 0;
         return 'You Won! Rock breaks scissors.';
     } else if (playerSelection === computerSelection) {
-        playerScore += 0;
-        computerScore += 0;
         return 'It is a draw.';
     } else {
         return 'Invalid Choice';
@@ -60,7 +52,7 @@ function game(playerScore, computerScore) {
         console.log(playerSelection);
         let computerSelection = getComputerChoice();
         console.log(computerSelection);
-        let result = playRound(playerSelection, computerSelection);
+        let result = playRound(playerSelection, computerSelection, playerScore, computerScore);
         console.log(result);
         if (playerScore == 1) {
             playerScore += 1;
