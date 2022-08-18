@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection){
         playerScore += 1;
         return "You Won! Rock breaks scissors. Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === computerSelection) {
-        return "It is a draw. Your score = " + playerScore + ". The computer's score = " + computerScore";
+        return "It is a draw. Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else {
         return "Invalid Choice";
     };
