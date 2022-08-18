@@ -19,8 +19,7 @@ let computerScore = 0;
 
 
 
-function playRound(playerSelection, computerSelection){
-  
+function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
         return "You Lost. Paper covers rock. Your score = " + playerScore + ". The computer's score = " + computerScore;  
@@ -49,9 +48,10 @@ function playRound(playerSelection, computerSelection){
 // function to play a 5 round game //
 
 function game() {
-    let playerScore = 0;
-    let computerScore = 0;
+   
     for (let i = 0; i < 5; i++) {
+        let playerScore = 0;
+        let computerScore = 0;
         let playerSelection = getPlayerSelection();
         console.log(playerSelection);
         let computerSelection = getComputerChoice();
@@ -62,25 +62,23 @@ function game() {
         if (result === "You Lost. Paper covers rock. Your score = " + playerScore + ". The computer's score = " + computerScore || 
         result === "You Lost. Scissors cut paper. Your score = " + playerScore + ". The computer's score = " + computerScore || 
         result === "You Lost. Rock breaks scissors. Your score = " + playerScore + ". The computer's score = " + computerScore) {
-            ++computerScore;
+            computerScore + 1;
         }
         else if (result === "You Won! Paper covers rock. Your score = " + playerScore + ". The computer's score = " + computerScore || 
         result === "You Won! Scissors cut paper. Your score = " + playerScore + ". The computer's score = " + computerScore || 
         result === "You Won! Rock breaks scissors. Your score = " + playerScore + ". The computer's score = " + computerScore) {
-            ++playerScore;
+            playerScore + 1;
         }
-        console.log(computerScore);
-        console.log(playerScore);
     }
 
     if (playerScore < computerScore){
-        return "You lose";
+        return "You lose. Your score = " + playerScore + ". The computer's score = " + computerScore;
     }
     else if (playerScore > computerScore) {
-        return "You win!";
+        return "You win! Your score = " + playerScore + ". The computer's score = " + computerScore;
     }
     else {
-        return "It is a draw.";
+        return "It is a draw. Your score = " + playerScore + ". The computer's score = " + computerScore;
     }
 }
 
