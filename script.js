@@ -23,24 +23,24 @@ function playRound(playerSelection, computerSelection){
   
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
-        return "You Lost. Paper covers rock. The computer's score = " + computerScore;  
+        return "You Lost. Paper covers rock. Your score = " + playerScore + ". The computer's score = " + computerScore;  
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         computerScore += 1;
-        return "You Lost. Scissors cut paper. The computer's score = " + computerScore;
+        return "You Lost. Scissors cut paper. Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore += 1;
-        return "You Lost. Rock breaks scissors. The computer scores = " + computerScore;
+        return "You Lost. Rock breaks scissors. Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore += 1;
-        return "You Won! Paper covers rock. Your score = " + playerScore;
+        return "You Won! Paper covers rock. Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore += 1;
-        return "You Won! Scissors cut paper. Your score = " + playerScore;
+        return "You Won! Scissors cut paper. Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore += 1;
-        return "You Won! Rock breaks scissors. Your score = " + playerScore;
+        return "You Won! Rock breaks scissors. Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === computerSelection) {
-        return "It is a draw. No-one scores";
+        return "It is a draw. Your score = " + playerScore + ". The computer's score = " + computerScore";
     } else {
         return "Invalid Choice";
     };
