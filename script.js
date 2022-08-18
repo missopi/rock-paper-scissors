@@ -13,12 +13,10 @@ function getComputerChoice() {
     return computerSelection;
 }
 
-// function to play round //
 let playerScore = 0;
 let computerScore = 0;
 
-
-
+// function to play round //
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
@@ -46,9 +44,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // function to play a 5 round game //
-
 function game() {
-   
     for (let i = 0; i < 5; i++) {
         let playerScore = 0;
         let computerScore = 0;
@@ -70,7 +66,6 @@ function game() {
             playerScore + 1;
         }
     }
-
     if (playerScore < computerScore){
         return "You lose. Your score = " + playerScore + ". The computer's score = " + computerScore;
     }
