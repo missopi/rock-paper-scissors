@@ -23,22 +23,22 @@ function playRound(playerSelection, computerSelection){
   
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
-        return 'You Lost. Paper covers rock. The computer scores one point';  
+        return 'You Lost. Paper covers rock. The computer scores ' + computerScore;  
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         computerScore += 1;
-        return 'You Lost. Scissors cut paper. The computer scores one point';
+        return 'You Lost. Scissors cut paper. The computer scores ' + computerScore;
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore += 1;
-        return 'You Lost. Rock breaks scissors. The computer scores one point';
+        return 'You Lost. Rock breaks scissors. The computer scores ' + computerScore;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore += 1;
-        return 'You Won! Paper covers rock. You score one point';
+        return 'You Won! Paper covers rock. You score ' + playerScore;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore += 1;
-        return 'You Won! Scissors cut paper. You score one point';
+        return 'You Won! Scissors cut paper. You score ' + playerScore;
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore += 1;
-        return 'You Won! Rock breaks scissors. You score one point';
+        return 'You Won! Rock breaks scissors. You score ' + playerScore;
     } else if (playerSelection === computerSelection) {
         return 'It is a draw. No-one scores';
     } else {
@@ -56,7 +56,6 @@ function game(playerScore, computerScore) {
         console.log(computerSelection);
         let result = playRound(playerSelection, computerSelection);
         console.log(result);
-
         //let playerScore = playRound(playerScore);
         //let computerScore = playRound(computerScore);
         console.log(playerScore);
