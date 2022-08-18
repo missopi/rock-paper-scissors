@@ -56,23 +56,6 @@ function game(playerScore, computerScore) {
         console.log(computerSelection);
         let result = playRound(playerSelection, computerSelection);
         console.log(result);
-        //let playerScore = playRound(playerScore);
-        //let computerScore = playRound(computerScore);
-        console.log(playerScore);
-        console.log(computerScore);
-
-        if (playerScore >= 1) {
-            playerScore += 1;
-        } 
-        else if (computerScore >= 1) {
-            computerScore += 1;
-        }
-        else {
-            computerScore += 0;
-            playerScore += 0;
-        }
-        console.log(playerScore);
-        console.log(computerScore);
     }
     if (playerScore < computerScore){
         return "You lose";
@@ -84,6 +67,5 @@ function game(playerScore, computerScore) {
         return "It is a draw.";
     }
 }
-
 
 console.log(game(playerScore, computerScore));
