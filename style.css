@@ -1,3 +1,33 @@
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: fantasy, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.header {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(70, 70, 70);
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
 .rock {
     width: 250px;
     height: 200px;
