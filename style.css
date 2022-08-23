@@ -2,9 +2,10 @@
 body {
     height: 100vh;
     margin: 0;
-    font-family: fantasy, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
+    color: rgb(70, 70, 70);
 }
 
 .content {
@@ -13,13 +14,14 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
+    gap: 20px;
 }
 
 .header {
     text-align: center;
     font-size: 50px;
     color: rgb(70, 70, 70);
-    font-weight: bold;
+    font-weight: bold;;
 }
 
 .buttons {
@@ -36,5 +38,34 @@ body {
     border-width: 5px;
     font-size: 30px;
     font-weight: bold;
-    color: rgb(70, 70, 70);
+    color: rgb(72, 72, 72);
+}
+
+.rock {
+    background-color: rgb(133, 248, 200);
+}
+
+.paper {
+    background-color: rgb(250, 250, 156);
+}
+
+.scissors {
+    background-color: rgb(199, 163, 253);
+}
+
+.score {
+    display: flex;
+    gap: 100px;
+}
+
+.compChoice {
+   padding-bottom: 25px;
+}
+
+.yourScore, .compScore {
+    font-size: 25px;
+}
+
+.winner {
+    font-size: 40px;
 }
