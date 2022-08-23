@@ -28,17 +28,13 @@ body {
     justify-content: center;
 }
 
-.rock {
+.rock, .paper, .scissors {
     width: 250px;
     height: 200px;
-}
-
-.paper {
-    width: 250px;
-    height: 200px;
-}
-
-.scissors {
-    width: 250px;
-    height: 200px;
+    border: solid rgb(70, 70, 70);
+    border-radius: 15%;
+    border-width: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(70, 70, 70);
 }
