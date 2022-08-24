@@ -1,19 +1,11 @@
-const rock = document.querySelector('#rock');
-rock.addEventListener('click', getPlayerSelection('rock'));
-
-const paper = document.querySelector('#paper');
-paper.addEventListener('click', getPlayerSelection('paper'));
-
-const scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', getPlayerSelection('scissors'));
-
+document.getElementById('rock').onclick = getPlayerSelection;
+document.getElementById('paper').onclick = getPlayerSelection;
+document.getElementById('scissors').onclick = getPlayerSelection;
 
 // function to get player's selection //
 function getPlayerSelection() {
-    let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?').toLowerCase();
-    if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
-    return playerSelection;
-    };
+    let playerSelection = this.id;
+    console.log(playerSelection);
 }
 
 // function to get computer's choice //
