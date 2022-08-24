@@ -1,20 +1,24 @@
+
+// button click actions getPlayerSelection function
 document.getElementById('rock').onclick = getPlayerSelection;
 document.getElementById('paper').onclick = getPlayerSelection;
 document.getElementById('scissors').onclick = getPlayerSelection;
 
-// function to get player's selection //
+// function to get player's  and computer's selection
 function getPlayerSelection() {
     let playerSelection = this.id;
     console.log(playerSelection);
     let choice = ['rock', 'paper', 'scissors'];
     let computerSelection = choice[Math.floor(Math.random() * 3)];
     console.log(computerSelection);
+    document.getElementById('computerSelection').innerHTML = 
+    'The computer chose: ' + computerSelection;  // display computer's choice on page
 }
 
 let playerScore = 0;
 let computerScore = 0;
 
-// function to play round //
+// function to play round
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
@@ -41,7 +45,7 @@ function playRound(playerSelection, computerSelection) {
     };
 }
 
-// function to play a 5 round game //
+// function to play a 5 round game 
 //function game() {
 //    for (let i = 0; i < 5; i++) {
 //        let playerScore = 0;
