@@ -6,13 +6,9 @@ document.getElementById('scissors').onclick = getPlayerSelection;
 function getPlayerSelection() {
     let playerSelection = this.id;
     console.log(playerSelection);
-}
-
-// function to get computer's choice //
-function getComputerChoice() {  
     let choice = ['rock', 'paper', 'scissors'];
     let computerSelection = choice[Math.floor(Math.random() * 3)];
-    return computerSelection;
+    console.log(computerSelection);
 }
 
 let playerScore = 0;
