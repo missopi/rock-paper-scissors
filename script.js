@@ -11,7 +11,7 @@ function getPlayerSelection() {
     let choice = ['rock', 'paper', 'scissors'];
     let computerSelection = choice[Math.floor(Math.random() * 3)];
     console.log(computerSelection);
-    document.getElementById('computerSelection').innerHTML = 
+    document.getElementById('computerSelection').textContent = 
     'The computer chose: ' + computerSelection;  // display computer's choice on page
 }
 
