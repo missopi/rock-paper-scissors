@@ -1,3 +1,17 @@
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', getPlayerSelection('rock'));
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', getPlayerSelection('paper'));
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', getPlayerSelection('scissors'));
+
+
+
+
+
+
 // function to get player's selection //
 function getPlayerSelection() {
     let playerSelection = prompt('What do you choose? Rock, Paper, or Scissors?').toLowerCase();
