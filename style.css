@@ -57,3 +57,7 @@ body {
 .winner {
     font-size: 40px;
 }
+
+img {
+    width: 180px;
+}
