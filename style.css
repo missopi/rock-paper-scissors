@@ -39,7 +39,7 @@ body {
     font-size: 30px;
     font-weight: bold;
     color: rgb(72, 72, 72);
-    transition: all 0.07s;
+    transition: all 0.15s;
 }
 
 .score {
@@ -64,8 +64,7 @@ img {
 }
 
 .buttonPress {
-    transform:scale(1.1);
-    border-color: rgb(13, 191, 13);
-    background-color: rgb(144, 250, 144);
-    box-shadow: 0 0 10px rgb(13, 191, 13);
+    transform:scale(1.15);
+    border-color: rgb(0, 158, 0);
+    background-color: rgb(105, 246, 105);
 }

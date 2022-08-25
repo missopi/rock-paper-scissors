@@ -4,15 +4,25 @@ document.getElementById('rock').onclick = getPlayerSelection;
 document.getElementById('paper').onclick = getPlayerSelection;
 document.getElementById('scissors').onclick = getPlayerSelection;
 
+function playSound(e){
+    const audio = document.querySelector(`audio[id]`);
+    const button = document.querySelector(`.button[id]`);
+    if (!audio) return; // stops function
+    audio.currentTime = 0; // rewind to the start
+    audio.play();
+    button.classList.add('buttonPress');
+}
+
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return; // skip if not a transform
+    this.classList.remove('buttonPress');
+}
+
 const buttons = document.querySelectorAll('button');
-buttons.forEach((button) =>{
-    button.addEventListener('click',function(e) {
-        const audio = document.querySelector(`audio[id="audioRock"]`);
-        if (!audio) return; // stops function
-        audio.currentTime = 0; // rewind to the start
-        audio.play();
-    });
-});
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
+
+window.addEventListener('click', playSound)
+
 
 
 // function to get player's  and computer's selection
