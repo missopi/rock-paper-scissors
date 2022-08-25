@@ -14,13 +14,13 @@
             <h1 class="header">Rock, paper or scissors?</h1>
 
             <div class="buttons">
-                <button id ="rock" class ="button"><img src="images/rock.png">
+                <button id ="rock" data-key = 82  class ="button"><img src="images/rock.png">
                     <span class="sound"></span>
                 </button>
-                <button id ="paper" class ="button"><img src="images/paper.png">
+                <button id ="paper" data-key = 80 class ="button"><img src="images/paper.png">
                     <span class="sound"></span>
                 </button>
-                <button id ="scissors" class ="button"><img src="images/scissors.png">
+                <button id ="scissors" data-key = 83 class ="button"><img src="images/scissors.png">
                     <span class="sound"></span>
                 </button>
             </div>
@@ -36,9 +36,9 @@
         </div>
 
         <!-- sounds played when buttons are clicked -->
-        <audio id="audioRock" src="sounds/rock.wav"></audio>
-        <audio id="audioPaper" src="sounds/paper.wav"></audio>
-        <audio id="audioScissors" src="sounds/scissors.wav"></audio>
+        <audio id="audioRock" data-key = 82 src="sounds/rock.wav"></audio>
+        <audio id="audioPaper" data-key = 80 src="sounds/paper.wav"></audio>
+        <audio id="audioScissors" data-key = 83 src="sounds/scissors.wav"></audio>
 
     </body>
 </html>

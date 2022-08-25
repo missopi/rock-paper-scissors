@@ -1,12 +1,8 @@
 
-// button click actions getPlayerSelection function
-document.getElementById('rock').onclick = getPlayerSelection;
-document.getElementById('paper').onclick = getPlayerSelection;
-document.getElementById('scissors').onclick = getPlayerSelection;
-
 function playSound(e){
-    const audio = document.querySelector(`audio[id]`);
-    const button = document.querySelector(`.button[id]`);
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const button = document.querySelector(`.button[data-key="${e.keyCode}"]`);
+    console.log(e);
     if (!audio) return; // stops function
     audio.currentTime = 0; // rewind to the start
     audio.play();
@@ -21,7 +17,8 @@ function removeTransition(e) {
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
 
-window.addEventListener('click', playSound)
+window.addEventListener('keydown', getPlayerSelection);
+window.addEventListener('keydown', playSound);
 
 
 
