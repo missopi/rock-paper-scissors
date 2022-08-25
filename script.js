@@ -7,9 +7,9 @@ document.getElementById('scissors').onclick = getPlayerSelection;
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) =>{
     button.addEventListener('click',function(e) {
-        const audio = document.querySelector(`audio`);
+        const audio = document.querySelector(`audio[id="audioRock"]`);
         if (!audio) return; // stops function
-        audio.currentTime = 0; 
+        audio.currentTime = 0; // rewind to the start
         audio.play();
     });
 });
