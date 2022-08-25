@@ -4,6 +4,13 @@ document.getElementById('rock').onclick = getPlayerSelection;
 document.getElementById('paper').onclick = getPlayerSelection;
 document.getElementById('scissors').onclick = getPlayerSelection;
 
+
+// button click also activates animation
+window.addEventListener('click', function(e) {
+    const button = document.querySelector(`.button[="${e.}"]`);
+    button.classList.add('buttonPress');
+});
+
 // function to get player's  and computer's selection
 function getPlayerSelection() {
     let playerSelection = this.id;
