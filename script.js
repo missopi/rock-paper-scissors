@@ -6,8 +6,10 @@ document.getElementById('scissors').onclick = getPlayerSelection;
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) =>{
-    button.addEventListener('click', () => {
-        ;
+    button.addEventListener('click',function(e) {
+        const audio = document.querySelector(`audio[id]`);
+        if (!audio) return; // stops function 
+        audio.play();
     });
 });
 

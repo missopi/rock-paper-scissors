@@ -13,16 +13,13 @@
             <h1 class="header">Rock, paper or scissors?</h1>
 
             <div class="buttons">
-                <button id ="rock" data-click ="rock" class ="button">
-                    <img src="images/rock.png">
+                <button id ="rock" class ="button"><img src="images/rock.png">
                     <span class="sound"></span>
                 </button>
-                <button id ="paper" data-click ="paper" class ="button">
-                    <img src="images/paper.png">
+                <button id ="paper" class ="button"><img src="images/paper.png">
                     <span class="sound"></span>
                 </button>
-                <button id ="scissors" data-click ="scissors" class ="button">
-                    <img src="images/scissors.png">
+                <button id ="scissors" class ="button"><img src="images/scissors.png">
                     <span class="sound"></span>
                 </button>
             </div>
@@ -37,9 +34,9 @@
             <div id="winner"></div>
         </div>
 
-        <audio data-click="rock" src="sounds/rock.wav"></audio>
-        <audio data-click="paper" src="sounds/paper.wav"></audio>
-        <audio data-click="scissors" src="sounds/scissors.wav"></audio>
+        <audio id="audioRock" src="sounds/rock.wav"></audio>
+        <audio id="audioPaper" src="sounds/paper.wav"></audio>
+        <audio id="audioScissors" src="sounds/scissors.wav"></audio>
 
     </body>
 </html>
