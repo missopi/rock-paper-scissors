@@ -64,6 +64,7 @@ body {
     font-size: 60px;
     font-weight: bold;
     color: firebrick;
+    padding-bottom: 30px;
 }
 
 img {
@@ -74,4 +75,13 @@ img {
     transform:scale(1.15);
     border-color: rgb(0, 158, 0);
     background-color: rgb(105, 246, 105);
+}
+
+#playAgain {
+    background-color: white;
+    width: 120px;
+    color: rgb(70, 70, 70);
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 10px;
 }
