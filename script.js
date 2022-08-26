@@ -48,10 +48,9 @@ document.getElementById('scissors').addEventListener ('click', playSound3)
 // function to get player's  and computer's selection
 function getPlayerSelection() {
     let playerSelection = this.id;
-    console.log(playerSelection);
     let choice = ['rock', 'paper', 'scissors'];
     let computerSelection = choice[Math.floor(Math.random() * 3)];
-    console.log(computerSelection);
+    return playerSelection && computerSelection;
     //document.getElementById('computerSelection').textContent = 
     //'The computer chose: ' + computerSelection;  // display computer's choice on page
 }
@@ -93,7 +92,7 @@ function playRound(playerSelection, computerSelection) {
     } else {
         result = finish[3];
     };
-    document.getElementById('result').textContent = result; // display result on page
+    document.getElementById("result").textContent = result; // display result on page
 };
 
 // function to play a 5 round game 
