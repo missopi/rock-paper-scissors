@@ -35,21 +35,17 @@ function removeTransition(e) {
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
 
-//document.getElementById('rock').addEventListener ('click', getPlayerSelection);
 //document.getElementById('rock').addEventListener ('click', game);
 document.getElementById('rock').addEventListener ('click', playSound);
 document.getElementById('rock').addEventListener ('click', playRound);
 
-//document.getElementById('paper').addEventListener ('click', getPlayerSelection);
 //document.getElementById('paper').addEventListener ('click', game);
 document.getElementById('paper').addEventListener ('click', playSound2);
 document.getElementById('paper').addEventListener ('click', playRound);
 
-//document.getElementById('scissors').addEventListener ('click', getPlayerSelection);
 //document.getElementById('scissors').addEventListener ('click', game);
 document.getElementById('scissors').addEventListener ('click', playSound3);
 document.getElementById('scissors').addEventListener ('click', playRound);
-
 
 let playerScore = 0;
 let computerScore = 0;
