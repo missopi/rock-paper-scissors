@@ -35,12 +35,15 @@ function removeTransition(e) {
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
 
+document.getElementById('rock').addEventListener ('click', getPlayerSelection);
 document.getElementById('rock').addEventListener ('click', playRound);
 document.getElementById('rock').addEventListener ('click', playSound);
 
+document.getElementById('paper').addEventListener ('click', getPlayerSelection);
 document.getElementById('paper').addEventListener ('click', playRound);
 document.getElementById('paper').addEventListener ('click', playSound2)
 
+document.getElementById('scissors').addEventListener ('click', getPlayerSelection);
 document.getElementById('scissors').addEventListener ('click', playRound);
 document.getElementById('scissors').addEventListener ('click', playSound3)
 
@@ -48,11 +51,11 @@ document.getElementById('scissors').addEventListener ('click', playSound3)
 // function to get player's  and computer's selection
 function getPlayerSelection() {
     let playerSelection = this.id;
+    console.log(playerSelection);
     let choice = ['rock', 'paper', 'scissors'];
     let computerSelection = choice[Math.floor(Math.random() * 3)];
-    return playerSelection && computerSelection;
-    //document.getElementById('computerSelection').textContent = 
-    //'The computer chose: ' + computerSelection;  // display computer's choice on page
+    document.getElementById('computerSelection').textContent = 
+    'The computer chose: ' + computerSelection;  // display computer's choice on page
 }
 
 let playerScore = 0;
@@ -65,30 +68,23 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         //computerScore += 1;
         result = finish[0];
-        //Your score = " + playerScore + ". The computer's score = " + computerScore;  
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         //computerScore += 1;
         result = finish[0];
-        //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         //computerScore += 1;
         result = finish[0];
-        //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         //playerScore += 1;
         result = finish[1];
-        //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         //playerScore += 1;
         result = finish[1];
-        //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         //playerScore += 1;
         result = finish[1];
-        //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === computerSelection) {
         result = finish[2];
-        //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else {
         result = finish[3];
     };
