@@ -2,30 +2,25 @@
 // function for effects on rock button
 function playSound(e){
     const audio = document.querySelector(`audio[id="audioRock"]`);
-    //const button = document.querySelector(`.button[id="rock"]`);
     if (!audio) return; // stops function
     audio.currentTime = 0; // rewind to the start
     audio.play();
-    //button.classList.add('buttonPress');
 };
 // function for effect on paper button
 function playSound2(e){
     const audio = document.querySelector(`audio[id="audioPaper"]`);
-    //const button = document.querySelector(`.button[id="paper"]`);
     if (!audio) return; // stops function
     audio.currentTime = 0; // rewind to the start
     audio.play();
-    //button.classList.add('buttonPress');
 };
 // function for effect on scissors button
 function playSound3(e){
     const audio = document.querySelector(`audio[id="audioScissors"]`);
-    //const button = document.querySelector(`.button[id="scissors"]`);
     if (!audio) return; // stops function
     audio.currentTime = 0; // rewind to the start
     audio.play();
-    //button.classList.add('buttonPress');
 };
+
 // function to end effect on buttons
 function removeTransition(e) {
     if (e.propertyName !== 'transform') return; // skip if not a transform
