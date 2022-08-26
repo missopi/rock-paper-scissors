@@ -35,15 +35,13 @@ function removeTransition(e) {
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
 
-//document.getElementById('rock').addEventListener ('click', game);
+
 document.getElementById('rock').addEventListener ('click', playSound);
 document.getElementById('rock').addEventListener ('click', playRound);
 
-//document.getElementById('paper').addEventListener ('click', game);
 document.getElementById('paper').addEventListener ('click', playSound2);
 document.getElementById('paper').addEventListener ('click', playRound);
 
-//document.getElementById('scissors').addEventListener ('click', game);
 document.getElementById('scissors').addEventListener ('click', playSound3);
 document.getElementById('scissors').addEventListener ('click', playRound);
 
@@ -85,11 +83,6 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let playerScore = 0;
         let computerScore = 0;
-        let playerSelection = this.id;
-        console.log(playerSelection);
-        let computerSelection = getPlayerSelection();
-        console.log(computerSelection);
-        let result = playRound(playerSelection, computerSelection);
         console.log(result);
         
         if (result === finish[0]) {
@@ -100,12 +93,16 @@ function game() {
         }
     }
     if (playerScore < computerScore){
-        document.getElementById('playerScore').textContent = "You lose. Your score = " + playerScore + ". The computer's score = " + computerScore;
+        document.getElementById('playerScore').textContent = "Your score = " + playerScore + " The computer's score = " + computerScore;
     }
     else if (playerScore > computerScore) {
-        document.getElementById('playerScore').textContent = "You win! Your score = " + playerScore + ". The computer's score = " + computerScore;
+        document.getElementById('playerScore').textContent = "Your score = " + playerScore + " The computer's score = " + computerScore;
     }
     else {
-        document.getElementById('playerScore').textContent = "It is a draw. Your score = " + playerScore + ". The computer's score = " + computerScore;
+        document.getElementById('playerScore').textContent = "Your score = " + playerScore + " The computer's score = " + computerScore;
     }
 };
+
+document.getElementById('rock').addEventListener ('click', game);
+document.getElementById('paper').addEventListener ('click', game);
+document.getElementById('scissors').addEventListener ('click', game);
