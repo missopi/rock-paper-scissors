@@ -35,13 +35,13 @@ function removeTransition(e) {
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
 
-document.getElementById('rock').addEventListener ('click', getPlayerSelection);
+document.getElementById('rock').addEventListener ('click', playRound);
 document.getElementById('rock').addEventListener ('click', playSound);
 
-document.getElementById('paper').addEventListener ('click', getPlayerSelection);
+document.getElementById('paper').addEventListener ('click', playRound);
 document.getElementById('paper').addEventListener ('click', playSound2)
 
-document.getElementById('scissors').addEventListener ('click', getPlayerSelection);
+document.getElementById('scissors').addEventListener ('click', playRound);
 document.getElementById('scissors').addEventListener ('click', playSound3)
 
 
@@ -52,46 +52,49 @@ function getPlayerSelection() {
     let choice = ['rock', 'paper', 'scissors'];
     let computerSelection = choice[Math.floor(Math.random() * 3)];
     console.log(computerSelection);
-    document.getElementById('computerSelection').textContent = 
-    'The computer chose: ' + computerSelection;  // display computer's choice on page
+    //document.getElementById('computerSelection').textContent = 
+    //'The computer chose: ' + computerSelection;  // display computer's choice on page
 }
 
 let playerScore = 0;
 let computerScore = 0;
+let finish = ["You Lost", "You Won!", "It's a draw.","Invalid Choice"];
 
 // function to play round
 function playRound(playerSelection, computerSelection) {
+    let result = "";
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         //computerScore += 1;
-        document.getElementBy(getPlayerSelection).textContent = "You Lost. Paper covers rock." 
+        result = finish[0];
         //Your score = " + playerScore + ". The computer's score = " + computerScore;  
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         //computerScore += 1;
-        document.getElementById('computerSelection').textContent = "You Lost. Scissors cut paper." 
+        result = finish[0];
         //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         //computerScore += 1;
-        document.getElementById('computerSelection').textContent = "You Lost. Rock breaks scissors." 
+        result = finish[0];
         //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         //playerScore += 1;
-        document.getElementById('computerSelection').textContent = "You Won! Paper covers rock." 
+        result = finish[1];
         //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         //playerScore += 1;
-        document.getElementById('computerSelection').textContent = "You Won! Scissors cut paper." 
+        result = finish[1];
         //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         //playerScore += 1;
-        document.getElementById('computerSelection').textContent = "You Won! Rock breaks scissors." 
+        result = finish[1];
         //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else if (playerSelection === computerSelection) {
-        document.getElementById('computerSelection').textContent = "It is a draw." 
+        result = finish[2];
         //Your score = " + playerScore + ". The computer's score = " + computerScore;
     } else {
-        document.getElementById('computerSelection').textContent = "Invalid Choice";
+        result = finish[3];
     };
-}
+    document.getElementById('result').textContent = result; // display result on page
+};
 
 // function to play a 5 round game 
 //function game() {
