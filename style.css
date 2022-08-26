@@ -77,11 +77,3 @@ img {
     background-color: rgb(105, 246, 105);
 }
 
-#playAgain {
-    background-color: white;
-    width: 120px;
-    color: rgb(70, 70, 70);
-    padding: 8px;
-    font-weight: bold;
-    border-radius: 10px;
-}

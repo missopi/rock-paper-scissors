@@ -102,11 +102,9 @@ function game() {
     }
     if (playerScore === 5) {
         document.getElementById('winnerPlay').textContent = "YOU WIN!";
-        document.getElementById('playAgain').textContent = "Play Again?";
     }
     else if (computerScore === 5){
         document.getElementById('winnerComp').textContent = "THE COMPUTER WINS";
-        document.getElementById('playAgain').textContent = "Play Again?";
     }
     
 };
