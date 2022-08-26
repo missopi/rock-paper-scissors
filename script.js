@@ -75,7 +75,6 @@ function playRound() {
     } else {
         result = finish[3];
     };
-    document.getElementById("result").textContent = result; // display result on page
 };
 
 // function to play a 5 round game 
