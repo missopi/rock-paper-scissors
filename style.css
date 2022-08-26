@@ -77,3 +77,14 @@ img {
     background-color: rgb(105, 246, 105);
 }
 
+.buttonPressRed {
+    transform:scale(1.15);
+    border-color: rgb(254, 7, 7);
+    background-color: rgb(253, 55, 55);
+}
+
+.buttonPressYellow {
+    transform:scale(1.15);
+    border-color: rgb(225, 254, 7);
+    background-color: rgb(236, 253, 55);
+}

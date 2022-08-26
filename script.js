@@ -2,34 +2,36 @@
 // function for effects on rock button
 function playSound(e){
     const audio = document.querySelector(`audio[id="audioRock"]`);
-    const button = document.querySelector(`.button[id="rock"]`);
+    //const button = document.querySelector(`.button[id="rock"]`);
     if (!audio) return; // stops function
     audio.currentTime = 0; // rewind to the start
     audio.play();
-    button.classList.add('buttonPress');
+    //button.classList.add('buttonPress');
 };
 // function for effect on paper button
 function playSound2(e){
     const audio = document.querySelector(`audio[id="audioPaper"]`);
-    const button = document.querySelector(`.button[id="paper"]`);
+    //const button = document.querySelector(`.button[id="paper"]`);
     if (!audio) return; // stops function
     audio.currentTime = 0; // rewind to the start
     audio.play();
-    button.classList.add('buttonPress');
+    //button.classList.add('buttonPress');
 };
 // function for effect on scissors button
 function playSound3(e){
     const audio = document.querySelector(`audio[id="audioScissors"]`);
-    const button = document.querySelector(`.button[id="scissors"]`);
+    //const button = document.querySelector(`.button[id="scissors"]`);
     if (!audio) return; // stops function
     audio.currentTime = 0; // rewind to the start
     audio.play();
-    button.classList.add('buttonPress');
+    //button.classList.add('buttonPress');
 };
 // function to end effect on buttons
 function removeTransition(e) {
     if (e.propertyName !== 'transform') return; // skip if not a transform
     this.classList.remove('buttonPress');
+    this.classList.remove('buttonPressRed');
+    this.classList.remove('buttonPressYellow');
 }
 
 const buttons = document.querySelectorAll('button');
@@ -60,18 +62,48 @@ function playRound() {
     document.getElementById('computerSelection').textContent = 
     'The computer chose: ' + computerSelection;  // display computer's choice on page
     
-    if (playerSelection === 'rock' && computerSelection === 'paper' || 
-    playerSelection === 'paper' && computerSelection === 'scissors' || 
-    playerSelection === 'scissors' && computerSelection === 'rock') {
+    if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
         result = finish[0];
-    } else if (playerSelection === 'paper' && computerSelection === 'rock' || 
-    playerSelection === 'scissors' && computerSelection === 'paper' || 
-    playerSelection === 'rock' && computerSelection === 'scissors') {
+        const button = document.querySelector(`.button[id="rock"]`);
+        button.classList.add('buttonPressRed');
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        computerScore += 1;
+        result = finish[0];
+        const button = document.querySelector(`.button[id="paper"]`);
+        button.classList.add('buttonPressRed');
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        computerScore += 1;
+        result = finish[0];
+        const button = document.querySelector(`.button[id="scissors"]`);
+        button.classList.add('buttonPressRed');
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         playerScore += 1;
         result = finish[1];
-    } else if (playerSelection === computerSelection) {
+        const button = document.querySelector(`.button[id="paper"]`);
+        button.classList.add('buttonPress');
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        playerScore += 1;
+        result = finish[1];
+        const button = document.querySelector(`.button[id="scissors"]`);
+        button.classList.add('buttonPress');
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        playerScore += 1;
+        result = finish[1];
+        const button = document.querySelector(`.button[id="rock"]`);
+        button.classList.add('buttonPress');
+    } else if (playerSelection === 'rock' && computerSelection === 'rock') {
         result = finish[2];
+        const button = document.querySelector(`.button[id="rock"]`);
+        button.classList.add('buttonPressYellow');
+    } else if (playerSelection === 'paper' && computerSelection === 'paper') {
+        result = finish[2];
+        const button = document.querySelector(`.button[id="paper"]`);
+        button.classList.add('buttonPressYellow');
+    } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
+        result = finish[2];
+        const button = document.querySelector(`.button[id="scissors"]`);
+        button.classList.add('buttonPressYellow');
     } else {
         result = finish[3];
     };
