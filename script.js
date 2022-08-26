@@ -35,36 +35,37 @@ function removeTransition(e) {
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
 
-document.getElementById('rock').addEventListener ('click', getPlayerSelection);
-document.getElementById('rock').addEventListener ('click', playRound);
+//document.getElementById('rock').addEventListener ('click', getPlayerSelection);
+//document.getElementById('rock').addEventListener ('click', game);
 document.getElementById('rock').addEventListener ('click', playSound);
+document.getElementById('rock').addEventListener ('click', playRound);
 
-document.getElementById('paper').addEventListener ('click', getPlayerSelection);
+//document.getElementById('paper').addEventListener ('click', getPlayerSelection);
+//document.getElementById('paper').addEventListener ('click', game);
+document.getElementById('paper').addEventListener ('click', playSound2);
 document.getElementById('paper').addEventListener ('click', playRound);
-document.getElementById('paper').addEventListener ('click', playSound2)
 
-document.getElementById('scissors').addEventListener ('click', getPlayerSelection);
+//document.getElementById('scissors').addEventListener ('click', getPlayerSelection);
+//document.getElementById('scissors').addEventListener ('click', game);
+document.getElementById('scissors').addEventListener ('click', playSound3);
 document.getElementById('scissors').addEventListener ('click', playRound);
-document.getElementById('scissors').addEventListener ('click', playSound3)
 
-
-// function to get player's  and computer's selection
-function getPlayerSelection() {
-    let playerSelection = this.id;
-    console.log(playerSelection);
-    let choice = ['rock', 'paper', 'scissors'];
-    let computerSelection = choice[Math.floor(Math.random() * 3)];
-    document.getElementById('computerSelection').textContent = 
-    'The computer chose: ' + computerSelection;  // display computer's choice on page
-}
 
 let playerScore = 0;
 let computerScore = 0;
 let finish = ["You Lost", "You Won!", "It's a draw.","Invalid Choice"];
 
 // function to play round
-function playRound(playerSelection, computerSelection) {
+function playRound() {
     let result = "";
+    let playerSelection = this.id;
+    console.log(playerSelection);
+    let choice = ['rock', 'paper', 'scissors'];
+    let computerSelection = choice[Math.floor(Math.random() * 3)];
+    console.log(computerSelection);
+    document.getElementById('computerSelection').textContent = 
+    'The computer chose: ' + computerSelection;  // display computer's choice on page
+    
     if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerScore += 1;
         result = finish[0];
@@ -96,33 +97,27 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let playerScore = 0;
         let computerScore = 0;
-        let playerSelection = getPlayerSelection();
+        let playerSelection = this.id;
         console.log(playerSelection);
         let computerSelection = getPlayerSelection();
         console.log(computerSelection);
         let result = playRound(playerSelection, computerSelection);
         console.log(result);
         
-        if (result === "You Lost. Paper covers rock. Your score = " + playerScore + ". The computer's score = " + computerScore || 
-        result === "You Lost. Scissors cut paper. Your score = " + playerScore + ". The computer's score = " + computerScore || 
-        result === "You Lost. Rock breaks scissors. Your score = " + playerScore + ". The computer's score = " + computerScore) {
+        if (result === finish[0]) {
             computerScore + 1;
         }
-        else if (result === "You Won! Paper covers rock. Your score = " + playerScore + ". The computer's score = " + computerScore || 
-        result === "You Won! Scissors cut paper. Your score = " + playerScore + ". The computer's score = " + computerScore || 
-        result === "You Won! Rock breaks scissors. Your score = " + playerScore + ". The computer's score = " + computerScore) {
+        else if (result === finish[1]) {
             playerScore + 1;
         }
     }
     if (playerScore < computerScore){
-        return "You lose. Your score = " + playerScore + ". The computer's score = " + computerScore;
+        document.getElementById('playerScore').textContent = "You lose. Your score = " + playerScore + ". The computer's score = " + computerScore;
     }
     else if (playerScore > computerScore) {
-        return "You win! Your score = " + playerScore + ". The computer's score = " + computerScore;
+        document.getElementById('playerScore').textContent = "You win! Your score = " + playerScore + ". The computer's score = " + computerScore;
     }
     else {
-        return "It is a draw. Your score = " + playerScore + ". The computer's score = " + computerScore;
+        document.getElementById('playerScore').textContent = "It is a draw. Your score = " + playerScore + ". The computer's score = " + computerScore;
     }
-}
-
-//console.log(game());
+};
