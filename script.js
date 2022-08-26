@@ -48,6 +48,11 @@ let finish = ["You Lost", "You Won!", "It's a draw.","Invalid Choice"];
 
 // function to play round
 function playRound() {
+    if (playerScore === 0 && computerScore === 0) {
+        document.getElementById('winnerPlay').textContent = "";
+        document.getElementById('winnerComp').textContent = "";
+    };
+
     let result = "";
     let playerSelection = this.id;
     console.log(playerSelection);
@@ -107,31 +112,17 @@ function playRound() {
 // function to play a 5 round game 
 function game() {
     console.log(result);
-    for (let i = 0; i < 5; i++) {
-        let playerScore = 0;
-        let computerScore = 0;
-        
-        if (result === finish[0]) {
-            computerScore + 1;
-        }
-        else if (result === finish[1]) {
-            playerScore + 1;
-        }
-    }
-    if (playerScore < computerScore){
-        document.getElementById('playerScore').textContent = "Your score = " + playerScore + " The computer's score = " + computerScore;
-    }
-    else if (playerScore > computerScore) {
-        document.getElementById('playerScore').textContent = "Your score = " + playerScore + " The computer's score = " + computerScore;
-    }
-    else {
-        document.getElementById('playerScore').textContent = "Your score = " + playerScore + " The computer's score = " + computerScore;
-    }
+    document.getElementById('playerScore').textContent = "Your score = " + playerScore + " The computer's score = " + computerScore;
+    
     if (playerScore === 5) {
         document.getElementById('winnerPlay').textContent = "YOU WIN!";
+        playerScore = 0;
+        computerScore = 0;
     }
     else if (computerScore === 5){
         document.getElementById('winnerComp').textContent = "THE COMPUTER WINS";
+        playerScore = 0;
+        computerScore = 0;
     }
     
 };
