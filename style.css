@@ -56,8 +56,18 @@ body {
     text-align: center;
 }
 
-.winner {
-    font-size: 40px;
+#winnerPlay {
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(0, 158, 0);
+    text-shadow: rgb(105, 246, 105);
+}
+
+#winnerComp {
+    font-size: 60px;
+    font-weight: bold;
+    color: firebrick;
+    text-shadow: darkred;
 }
 
 img {

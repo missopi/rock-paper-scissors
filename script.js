@@ -80,10 +80,10 @@ function playRound() {
 
 // function to play a 5 round game 
 function game() {
+    console.log(result);
     for (let i = 0; i < 5; i++) {
         let playerScore = 0;
         let computerScore = 0;
-        console.log(result);
         
         if (result === finish[0]) {
             computerScore + 1;
@@ -100,6 +100,13 @@ function game() {
     }
     else {
         document.getElementById('playerScore').textContent = "Your score = " + playerScore + " The computer's score = " + computerScore;
+    }
+    if (playerScore === 5) {
+        document.getElementById('winnerPlay').textContent = "YOU WIN!";
+        ;
+    }
+    else if (computerScore === 5){
+        document.getElementById('winnerComp').textContent = "THE COMPUTER WINS";
     }
 };
 
