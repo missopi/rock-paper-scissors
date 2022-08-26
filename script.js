@@ -62,22 +62,14 @@ function playRound() {
     document.getElementById('computerSelection').textContent = 
     'The computer chose: ' + computerSelection;  // display computer's choice on page
     
-    if (playerSelection === 'rock' && computerSelection === 'paper') {
+    if (playerSelection === 'rock' && computerSelection === 'paper' || 
+    playerSelection === 'paper' && computerSelection === 'scissors' || 
+    playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore += 1;
         result = finish[0];
-    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        computerScore += 1;
-        result = finish[0];
-    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        computerScore += 1;
-        result = finish[0];
-    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        playerScore += 1;
-        result = finish[1];
-    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        playerScore += 1;
-        result = finish[1];
-    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    } else if (playerSelection === 'paper' && computerSelection === 'rock' || 
+    playerSelection === 'scissors' && computerSelection === 'paper' || 
+    playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore += 1;
         result = finish[1];
     } else if (playerSelection === computerSelection) {
