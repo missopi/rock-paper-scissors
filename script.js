@@ -47,9 +47,7 @@ function playRound(e) {
     playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore += 1;
         button.classList.add('buttonPress');
-    } else if (playerSelection === 'rock' && computerSelection === 'rock' ||
-    playerSelection === 'paper' && computerSelection === 'paper' ||
-    playerSelection === 'scissors' && computerSelection === 'scissors') {
+    } else if (playerSelection === computerSelection) {
         button.classList.add('buttonPressYellow');
     } else {
         result = finish[3];
