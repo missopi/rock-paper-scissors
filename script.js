@@ -7,28 +7,16 @@ function playSound(e){
     audio.play();
 };
 
-// function to end effect on buttons
-function removeTransition(e) {
-    if (e.propertyName !== 'transform') return; // skip if not a transform
-    this.classList.remove('buttonPress');
-    this.classList.remove('buttonPressRed');
-    this.classList.remove('buttonPressYellow');
-}
-
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
-
 let playerScore = 0;
 let computerScore = 0;
 
 function playRound(e) {
-    // checks score is 0 each then remove winner announcement on page
+    // checks score are 0 then removes winner announcement on page
     if (playerScore === 0 && computerScore === 0) {
         document.getElementById('winnerPlay').textContent = "";
         document.getElementById('winnerComp').textContent = "";
     };
 
-    let result = "";
     let playerSelection = this.id;
     let choice = ['rock', 'paper', 'scissors'];
     let computerSelection = choice[Math.floor(Math.random() * 3)];
@@ -40,16 +28,14 @@ function playRound(e) {
     playerSelection === 'paper' && computerSelection === 'scissors' ||
     playerSelection === 'scissors' && computerSelection === 'rock') {
         computerScore += 1;
-        button.classList.add('buttonPressRed');
+        button.classList.add('buttonPressRed'); // lose
     } else if (playerSelection === 'paper' && computerSelection === 'rock' ||
     playerSelection === 'scissors' && computerSelection === 'paper' ||
     playerSelection === 'rock' && computerSelection === 'scissors') {
         playerScore += 1;
-        button.classList.add('buttonPress');
+        button.classList.add('buttonPress'); // win
     } else if (playerSelection === computerSelection) {
-        button.classList.add('buttonPressYellow');
-    } else {
-        result = finish[3];
+        button.classList.add('buttonPressYellow'); // draw
     };
 };
 
@@ -59,7 +45,7 @@ function game() {
     
     if (playerScore === 5) {
         document.getElementById('winnerPlay').textContent = "YOU WIN!";
-        // tells the game to revert back to 0 score at beginning
+        // tells the game to revert back to 0 score
         playerScore = 0;
         computerScore = 0;
     }
@@ -81,3 +67,14 @@ document.getElementById('scissors').addEventListener ('click', playRound);
 document.getElementById('rock').addEventListener ('click', game);
 document.getElementById('paper').addEventListener ('click', game);
 document.getElementById('scissors').addEventListener ('click', game);
+
+// function to end effect on buttons
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return; // skip if not a transform
+    this.classList.remove('buttonPress');
+    this.classList.remove('buttonPressRed');
+    this.classList.remove('buttonPressYellow');
+}
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
