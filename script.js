@@ -1,5 +1,5 @@
 
-// function for effects on rock button
+// function for sound effects
 function playSound(e){
     const audio = document.querySelector(`audio[data-button="${e.currentTarget.id}"]`);
     if (!audio) return; // stops function
@@ -17,7 +17,6 @@ function removeTransition(e) {
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
-window.addEventListener('click', playSound)
 
 let playerScore = 0;
 let computerScore = 0;
