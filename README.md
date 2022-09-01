@@ -2,6 +2,8 @@
 
 Create a rock, paper, scissors game using Javascipt.
 
+https://missopi.github.io/rock-paper-scissors/
+
 Button images taken from:
 
 rock.png - https://www.nicepng.com/downpng/u2q8a9a9u2a9r5y3_rock-rock-paper-scissors-clipart/
